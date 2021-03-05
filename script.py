@@ -14,7 +14,7 @@ app=Flask(__name__)
 def index():
     return flask.render_template('index.html')
 
-#prediction function
+#prediction functiong
 def ValuePredictor(to_predict_list):
     to_predict = np.array(to_predict_list).reshape(1,10)
     loaded_model = joblib.load('model_svc.sav')
@@ -31,8 +31,8 @@ def result():
         result = ValuePredictor(to_predict_list)
         
         if int(result)==1:
-            prediction='There is onset of Heart Stroke!!'
+            prediction='Our ML System Predicts Onset of Heart Stroke!!'
         else:
-            prediction='System does not predict onset of Stroke!!'
+            prediction='Our ML System Predicts NO Onset of Heart Stroke!!'
             
         return render_template("result.html",prediction=prediction)
