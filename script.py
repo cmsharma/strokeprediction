@@ -14,7 +14,7 @@ app=Flask(__name__)
 def index():
     return flask.render_template('index.html')
 
-#prediction functiong
+#prediction function
 def ValuePredictor(to_predict_list):
     to_predict = np.array(to_predict_list).reshape(1,10)
     loaded_model = joblib.load('model_svc.sav')
